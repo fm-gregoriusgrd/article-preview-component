@@ -1,17 +1,33 @@
-const shareOpenBtn = document.getElementById("shareOpenBtn");
-const userInfo = document.getElementById("userInfo");
-const shareMenu = document.getElementById("shareMenu");
-const shareCloseBtn = document.getElementById("shareCloseBtn")
+function setupShareToggle() {
+  const shareMenu = document.getElementById("shareMenu");
+  const shareBubble = document.getElementById("shareBubble");
+  const shareOpenBtn = document.getElementById("shareOpenBtn");
+  const userInfo = document.getElementById("userInfo");
+  const shareCloseBtn = document.getElementById("shareCloseBtn")
 
-shareOpenBtn.addEventListener("click", () => {
+  function toggleShareMenu() {
+    const isMobile = window.innerWidth < 768;
 
-  shareMenu.classList.remove("hidden");
-  userInfo.classList.add("hidden");
-});
+    if (isMobile) {
+      shareMenu.classList.toggle("hidden");
+      userInfo.classList.toggle("hidden");
+    } else {
+      shareBubble.classList.toggle("hidden");
+    }
+  }
 
-shareCloseBtn.addEventListener("click", () => {
+  function resetVisibility() {
+    const isMobile = window.innerWidth < 768;
 
-    shareMenu.classList.add("hidden");
-    userInfo.classList.remove('hidden')
-})
+    shareMenu.classList.add("hidden")
+    shareBubble.classList.add("hidden")
+    userInfo.classList.remove("hidden")
+  }
 
+  shareOpenBtn?.addEventListener("click", toggleShareMenu);
+  shareCloseBtn?.addEventListener("click", toggleShareMenu);
+  window.addEventListener("resize", resetVisibility);
+}
+
+// Panggil setup saat halaman siap
+setupShareToggle();

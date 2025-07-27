@@ -3,81 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | Article preview component</title>
 
     <script src="script.js" defer></script>
-
     <link rel="stylesheet" href="./src/output.css" />
   </head>
   <body>
-    <main class="bg-grey-200 font-manrope min-h-screen mx-auto flex items-center justify-center">
-      <div class=" max-w-[375px] border-4 border-red-600">
-        <div class="max-h-[200px] overflow-hidden">
-          <img src="images/drawers.jpg" alt="" />
+    <main class="bg-grey-200 font-manrope mx-auto flex min-h-screen items-center justify-center">
+      <div class="max-w-[327px] md:max-w-[610px] md:grid md:grid-cols-2 bg-white rounded-xl shadow-md">
+        <!-- Image -->
+        <div class="h-[200px] overflow-hidden md:h-full rounded-tl-xl rounded-tr-xl md:rounded-tr-none md:rounded-bl-xl">
+          <img class="h-full w-full object-cover" src="images/drawers.jpg" alt="Drawers" />
         </div>
 
-        <div class="flex flex-col gap-6 p-8">
-          <h1 class="text-grey-900 text-xl font-bold">
-            Shift the overall look and feel by adding these wonderful touches to
-            furniture in your home
-          </h1>
-          <p class="text-grey-500 text-sm leading-6 font-medium">
-            Ever been in a room and felt like something was missing? Perhaps it
-            felt slightly incomplete. Well, you’re in luck, because we have just
-            the thing you need to solve that problem. Our new product will give
-            your home that extra flair it needs to really make it pop.
-          </p>
-        </div>
-
-        <div>
-          <div id="userInfo" class="flex items-center justify-between px-8 py-6">
-            <div class="flex-start items-center flex gap-4">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="images/avatar-michelle.jpg"
-                alt="Michelle Avatar"
-              />
-
-              <div>
-                <p class="text-grey-900 text-sm leading-6 font-bold">
-                  Michelle Appleton
-                </p>
-                <p class="text-grey-400 text-sm leading-6 font-medium">
-                  28 Jun 2020
-                </p>
-              </div>
-            </div>
-
-            <button id="shareOpenBtn">
-              <img class="cursor-pointer" src="images/icon-share.svg" alt="Share Icon" />
-            </button>
+        <!-- Text Content -->
+        <div id="content">
+          <div class="flex flex-col gap-6 p-8">
+            <h1 class="text-grey-900 text-xl font-bold">
+              Shift the overall look and feel by adding these wonderful touches to furniture in your home
+            </h1>
+            <p class="text-grey-500 text-sm leading-6 font-medium">
+              Ever been in a room and felt like something was missing? Perhaps it felt slightly incomplete.
+              Well, you’re in luck, because we have just the thing you need to solve that problem. Our new product
+              will give your home that extra flair it needs to really make it pop.
+            </p>
           </div>
-        </div>
 
-        <div id="shareMenu" class="bg-grey-900 rounded-bl-[10px] rounded-br-[10px] hidden">
-          <div class="flex items-center justify-between px-8 py-6">
-            <div class="flex-start items-center flex gap-8">
-              <p class="text-grey-400 text-sm leading-6 font-medium uppercase tracking-[0.25em]">share</p>
 
-              <div class="flex gap-4 max-h-[20px]">
-                <img class="max-w-[20px]" src="images/icon-facebook.svg" alt="Facebook Icon" />
-                <img class="max-w-[20px]" src="images/icon-twitter.svg" alt="Twitter Icon" />
-                <img class="max-w-[20px]" src="images/icon-pinterest.svg" alt="Pinterest Icon" />
+          <div class="relative">
+            <!-- User Info Row -->
+            <div id="userInfo" class="flex items-center justify-between relative px-8 py-6">
+              <div class="flex items-center gap-4">
+                <img class="h-10 w-10 rounded-full" src="images/avatar-michelle.jpg" alt="Michelle Avatar" />
+                <div>
+                  <p class="text-grey-900 text-sm font-bold leading-6">Michelle Appleton</p>
+                  <p class="text-grey-400 text-sm font-medium leading-6">28 Jun 2020</p>
+                </div>
+              </div>
+
+               <!-- Share Button -->
+              <button id="shareOpenBtn">
+                <img class="cursor-pointer" src="images/icon-share.svg" alt="Share Icon" />
+              </button>
+            </div>
+
+
+
+            <!-- Mobile Share Menu -->
+            <div id="shareMenu" class="hidden mt-4 bg-grey-900 rounded-b-xl px-6 py-4">
+              <div class="flex items-center justify-between">
+                <p class="text-grey-400 text-sm uppercase tracking-[0.25em]">Share</p>
+                <div class="flex gap-4">
+                  <img src="images/icon-facebook.svg" alt="Facebook" class="w-5" />
+                  <img src="images/icon-twitter.svg" alt="Twitter" class="w-5" />
+                  <img src="images/icon-pinterest.svg" alt="Pinterest" class="w-5" />
+                </div>
+
+              <button id="shareCloseBtn">
+                <img class="cursor-pointer" src="images/icon-share.svg" alt="Share Icon" />
+              </button>
               </div>
             </div>
 
-            <button id="shareCloseBtn">
-              <img class="cursor-pointer" src="images/icon-share.svg" alt="Share Icon" />
-            </button>
+            <!-- Desktop Share Bubble -->
+            <div id="shareBubble"
+              class="absolute right-0 bottom-full mb-4 bg-grey-900 rounded-xl px-6 py-4 hidden"
+            >
+              <div class="flex items-center gap-4">
+                <p class="text-grey-400 text-sm uppercase tracking-[0.25em]">BUBBLE</p>
+                <div class="flex gap-4">
+                  <img src="images/icon-facebook.svg" alt="Facebook" class="w-5" />
+                  <img src="images/icon-twitter.svg" alt="Twitter" class="w-5" />
+                  <img src="images/icon-pinterest.svg" alt="Pinterest" class="w-5" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
