@@ -12,15 +12,15 @@
   </head>
   <body>
     <main class="bg-grey-200 font-manrope mx-auto flex min-h-screen items-center justify-center">
-      <div class="max-w-[327px] md:max-w-[610px] md:grid md:grid-cols-2 bg-white rounded-xl shadow-md">
+      <div class="max-w-[327px] md:max-w-[610px] lg:max-w-[730px] md:grid md:grid-cols-2 lg:grid-cols-3 bg-white rounded-xl shadow-md">
         <!-- Image -->
-        <div class="h-[200px] overflow-hidden md:h-full rounded-tl-xl rounded-tr-xl md:rounded-tr-none md:rounded-bl-xl">
+        <div class="h-[200px] overflow-hidden md:h-full rounded-tl-xl rounded-tr-xl md:rounded-tr-none md:rounded-bl-xl lg:col-span-1">
           <img class="h-full w-full object-cover" src="images/drawers.jpg" alt="Drawers" />
         </div>
 
         <!-- Text Content -->
-        <div id="content">
-          <div class="flex flex-col gap-6 p-8">
+        <div id="content" class="lg:grid lg:col-span-2">
+          <div class="flex flex-col gap-6 p-8 lg:px-10">
             <h1 class="text-grey-900 text-xl font-bold">
               Shift the overall look and feel by adding these wonderful touches to furniture in your home
             </h1>
@@ -31,10 +31,9 @@
             </p>
           </div>
 
-
           <div class="relative">
             <!-- User Info Row -->
-            <div id="userInfo" class="flex items-center justify-between relative px-8 py-6">
+            <div id="userInfo" class="flex items-center justify-between relative px-8 pb-6 lg:px-10">
               <div class="flex items-center gap-4">
                 <img class="h-10 w-10 rounded-full" src="images/avatar-michelle.jpg" alt="Michelle Avatar" />
                 <div>
@@ -49,10 +48,8 @@
               </button>
             </div>
 
-
-
             <!-- Mobile Share Menu -->
-            <div id="shareMenu" class="hidden mt-4 bg-grey-900 rounded-b-xl px-6 py-4">
+            <div id="shareMenu" class="hidden bg-grey-900 rounded-b-xl px-6 py-4">
               <div class="flex items-center justify-between">
                 <p class="text-grey-400 text-sm uppercase tracking-[0.25em]">Share</p>
                 <div class="flex gap-4">
@@ -69,10 +66,10 @@
 
             <!-- Desktop Share Bubble -->
             <div id="shareBubble"
-              class="absolute right-0 bottom-full mb-4 bg-grey-900 rounded-xl px-6 py-4 hidden"
+              class="absolute right-0 bottom-full mb-4 bg-grey-900 rounded-xl px-10 py-5 hidden"
             >
               <div class="flex items-center gap-4">
-                <p class="text-grey-400 text-sm uppercase tracking-[0.25em]">BUBBLE</p>
+                <p class="text-grey-400 text-sm uppercase tracking-[0.25em]">share</p>
                 <div class="flex gap-4">
                   <img src="images/icon-facebook.svg" alt="Facebook" class="w-5" />
                   <img src="images/icon-twitter.svg" alt="Twitter" class="w-5" />
